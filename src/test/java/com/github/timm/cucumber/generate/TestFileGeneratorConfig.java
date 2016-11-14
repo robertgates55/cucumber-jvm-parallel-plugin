@@ -13,6 +13,7 @@ public class TestFileGeneratorConfig implements FileGeneratorConfig {
     private final boolean useTestNg = false;
     private final String namingScheme = "simple";
     private final String namingPattern = null;
+    private final String customVmTemplate = "";
 
     public TestFileGeneratorConfig setFeaturesDirectory(final File directory) {
         this.featuresDirectory = directory;
@@ -55,6 +56,10 @@ public class TestFileGeneratorConfig implements FileGeneratorConfig {
 
     public String getNamingPattern() {
         return namingPattern;
+    }
+
+    public String getCustomVmTemplate() {
+        return customVmTemplate;
     }
 
     public TestFileGeneratorConfig setFilterFeaturesByTags(final boolean newValue) {

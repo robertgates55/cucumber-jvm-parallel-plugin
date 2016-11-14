@@ -129,7 +129,7 @@ public class GenerateRunnersMojo extends AbstractMojo implements FileGeneratorCo
     @Parameter(property = "namingPattern", required = false)
     private String namingPattern;
 
-    @Parameter(property = "customVmTemplate", required = false)
+    @Parameter(defaultValue = "", property = "customVmTemplate", required = false)
     private String customVmTemplate;
 
     /**
