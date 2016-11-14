@@ -7,9 +7,9 @@
 		<version>9</version>
 	</parent>
 
-	<groupId>com.github.temyers</groupId>
+	<groupId>com.github.robertgates55</groupId>
 	<artifactId>cucumber-jvm-parallel-plugin</artifactId>
-	<version>0.9999</version>
+	<version>0.99999</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>cucumber-jvm-parallel-plugin Maven Plugin</name>
