@@ -60,9 +60,12 @@ public class CucumberITGeneratorByScenario implements CucumberITGenerator {
                         "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
         final VelocityEngine engine = new VelocityEngine(props);
         engine.init();
-        if (config.useTestNG()) {
+        if (config.getCustomVmTemplate() != ""){
             velocityTemplate =
-                            engine.getTemplate("cucumber-testng-runner.vm", config.getEncoding());
+                    engine.getTemplate(config.getCustomVmTemplate(), config.getEncoding());
+        } else if (config.useTestNG()) {
+            velocityTemplate =
+                    engine.getTemplate("cucumber-testng-runner.vm", config.getEncoding());
         } else {
             velocityTemplate = engine.getTemplate("cucumber-junit-runner.vm", config.getEncoding());
         }

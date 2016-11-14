@@ -129,6 +129,9 @@ public class GenerateRunnersMojo extends AbstractMojo implements FileGeneratorCo
     @Parameter(property = "namingPattern", required = false)
     private String namingPattern;
 
+    @Parameter(property = "customVmTemplate", required = false)
+    private String customVmTemplate;
+
     /**
      * The scheme to use when generating runner. Valid values are:
      * <ul>
@@ -228,5 +231,8 @@ public class GenerateRunnersMojo extends AbstractMojo implements FileGeneratorCo
         return namingPattern;
     }
 
+    public String getCustomVmTemplate() {
+        return customVmTemplate;
+    }
 
 }

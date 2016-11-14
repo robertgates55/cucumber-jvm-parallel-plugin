@@ -61,7 +61,10 @@ public class CucumberITGeneratorByFeature implements CucumberITGenerator {
                         "org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader");
         final VelocityEngine engine = new VelocityEngine(props);
         engine.init();
-        if (config.useTestNG()) {
+        if (config.getCustomVmTemplate() != ""){
+            velocityTemplate =
+                    engine.getTemplate(config.getCustomVmTemplate(), config.getEncoding());
+        } else if (config.useTestNG()) {
             velocityTemplate =
                             engine.getTemplate("cucumber-testng-runner.vm", config.getEncoding());
         } else {
